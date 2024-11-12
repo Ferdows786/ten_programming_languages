@@ -584,6 +584,10 @@ class aboutPage extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 40),
+              child: Divider(thickness: 2,),
+            ),
             Card(
               color: Colors.cyan,
               margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
@@ -600,7 +604,7 @@ class aboutPage extends StatelessWidget {
               ),
             ),
             Card(
-              color: Colors.blueGrey,
+              color: Colors.cyan,
               margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
               child: ListTile(
                 leading: Icon(
