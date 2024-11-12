@@ -526,7 +526,7 @@ class _settingPageState extends State<settingPage> {
                   color: Colors.red, fontFamily: 'iranYekan', fontSize: 16),
             ),
             onTap: () {
-              logout(context);
+              Navigator.of(context).pop();
             },
           ),
         ],
