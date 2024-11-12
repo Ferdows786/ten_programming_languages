@@ -585,7 +585,7 @@ class aboutPage extends StatelessWidget {
               height: 10,
             ),
             Card(
-              color: Colors.blueGrey,
+              color: Colors.cyan,
               margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
               child: ListTile(
                 leading: Icon(
