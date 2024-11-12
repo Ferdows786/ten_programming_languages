@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main(List<String> args) {
@@ -637,14 +638,26 @@ class sharePage extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Text(
-          'صفحه اشتراک گذاری',
-          style: TextStyle(
-              color: Colors.black, fontSize: 25, fontFamily: 'iranYekan'),
+        child: Container(
+          width: 300,
+          height: 50,
+          child: ElevatedButton(
+            onPressed: () {
+              String share = 'https://www.google.com';
+              Share.share(share);
+            },
+            child: Text(
+              'اشتراک گذاری لینک',
+              style: TextStyle(color: Colors.white, fontFamily: 'iranYekan'),
+            ),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.cyan,
+              foregroundColor: Colors.white,
+            ),
+          ),
         ),
       ),
     );
-    ;
   }
 }
 
