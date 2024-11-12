@@ -624,6 +624,9 @@ void changeUsername(context) {
   );
 }
 
+void setState(Null Function() param0) {
+}
+
 
 
 
