@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'setstate';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -541,6 +540,7 @@ class aboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.cyan,
         title: Center(
@@ -552,10 +552,68 @@ class aboutPage extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Text(
-          'صفحه درباره ما',
-          style: TextStyle(
-              color: Colors.black, fontSize: 25, fontFamily: 'iranYekan'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+              ),
+              child: Align(
+                alignment: Alignment(0, 0.2),
+                child: ClipOval(
+                  child: Image.asset(
+                    'assets/images/I AM F.jpg',
+                    width: 200,
+                    height: 200,
+                  ),
+                ),
+              ),
+            ),
+            Text(
+              'Flutter developer',
+              style: TextStyle(
+                color: Colors.black,
+                fontFamily: 'Source Sans Pro',
+                fontSize: 30,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Card(
+              color: Colors.blueGrey,
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+              child: ListTile(
+                leading: Icon(
+                  CupertinoIcons.mail,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'FerdowsOsmani@gmail.com',
+                  style: TextStyle(
+                      color: Colors.white, fontFamily: 'Source Sans Pro'),
+                ),
+              ),
+            ),
+            Card(
+              color: Colors.blueGrey,
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+              child: ListTile(
+                leading: Icon(
+                  CupertinoIcons.phone,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  '+93 729 60 62 81',
+                  style: TextStyle(
+                      color: Colors.white, fontFamily: 'Source Sans Pro'),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -624,12 +682,7 @@ void changeUsername(context) {
   );
 }
 
-void setState(Null Function() param0) {
-}
-
-
-
-
+void setState(Null Function() param0) {}
 
 void changeProfilePicture(BuildContext context) {
   showDialog(
@@ -673,9 +726,11 @@ void logout(BuildContext context) {
               },
               child: Text('خروج'),
             ),
-            TextButton(onPressed: (){
-                Navigator.pop(context);
-            }, child: Text('انصراف')),
+            TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text('انصراف')),
           ],
         );
       });
