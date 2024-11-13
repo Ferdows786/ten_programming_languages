@@ -38,6 +38,8 @@ dependencies:
   share_plus: ^10.1.2
   flutter_screenutil: ^5.9.3
   url_launcher: ^6.3.1
+  animated_splash_screen: ^1.3.0
+  lottie: ^3.1.3
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +78,7 @@ flutter:
     - assets/images/programming_languages.png
     - assets/images/dart.png
     - assets/images/I AM F.jpg
+    - assets/animations/Animation_Loading.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

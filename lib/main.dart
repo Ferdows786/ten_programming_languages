@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -46,32 +48,14 @@ class _splashScreenState extends State<splashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.cyan,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/images/programming_languages.png',
-              width: 300,
-              height: 300,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'زبان های برنامه نویسی سطح بالا',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontFamily: 'Miremad',
-                letterSpacing: 1.5,
-              ),
-            ),
-          ],
-        ),
+    return AnimatedSplashScreen(
+      splash: Center(
+        child: Lottie.asset('assets/animations/Animation_Loading.json'),
       ),
+      nextScreen: homePage(),
+      backgroundColor: Colors.white,
+      duration: 4000,
+      splashIconSize: 400,
     );
   }
 }
@@ -586,7 +570,9 @@ class aboutPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 40),
-              child: Divider(thickness: 2,),
+              child: Divider(
+                thickness: 2,
+              ),
             ),
             Card(
               color: Colors.cyan,
