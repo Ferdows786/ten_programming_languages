@@ -417,6 +417,8 @@ class _settingPageState extends State<settingPage> {
 
   String username = 'Username';
 
+  var increaseSizeFont = 16.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -440,7 +442,7 @@ class _settingPageState extends State<settingPage> {
               style: TextStyle(
                 color: Colors.black,
                 fontFamily: 'iranYekan',
-                fontSize: 16,
+                fontSize: increaseSizeFont,
               ),
             ),
             subtitle: Text(
@@ -448,7 +450,7 @@ class _settingPageState extends State<settingPage> {
               style: TextStyle(
                 color: Colors.black54,
                 fontFamily: 'iranYekan',
-                fontSize: 14,
+                fontSize: increaseSizeFont - 2,
               ),
             ),
             onTap: () {
@@ -461,7 +463,7 @@ class _settingPageState extends State<settingPage> {
             title: Text(
               'حالت شب',
               style: TextStyle(
-                  color: Colors.black, fontFamily: 'iranYekan', fontSize: 16),
+                  color: Colors.black, fontFamily: 'iranYekan', fontSize: increaseSizeFont),
             ),
             trailing: Switch(
               value: isDarkMode,
@@ -478,7 +480,7 @@ class _settingPageState extends State<settingPage> {
             title: Text(
               'اعلان‌ها',
               style: TextStyle(
-                  color: Colors.black, fontFamily: 'iranYekan', fontSize: 16),
+                  color: Colors.black, fontFamily: 'iranYekan', fontSize: increaseSizeFont),
             ),
             trailing: Switch(
               value: notificationIsEnabled,
@@ -495,7 +497,7 @@ class _settingPageState extends State<settingPage> {
             title: Text(
               'تصویر پروفایل',
               style: TextStyle(
-                  color: Colors.black, fontFamily: 'iranYekan', fontSize: 16),
+                  color: Colors.black, fontFamily: 'iranYekan', fontSize: increaseSizeFont),
             ),
             onTap: () {
               changeProfilePicture(context);
@@ -507,11 +509,31 @@ class _settingPageState extends State<settingPage> {
             title: Text(
               'خروج',
               style: TextStyle(
-                  color: Colors.red, fontFamily: 'iranYekan', fontSize: 16),
+                  color: Colors.red, fontFamily: 'iranYekan', fontSize: increaseSizeFont),
             ),
             onTap: () {
               Navigator.of(context).pop();
             },
+          ),
+          ListTile(
+            title: Text(
+              'تغیر اندازه فونت',
+              style: TextStyle(
+                fontSize: increaseSizeFont,
+                fontFamily: 'iranYekan',
+                color: Colors.white,
+              ),
+            ),
+            subtitle: Slider(
+              value: increaseSizeFont,
+              max: 32.0,
+              min: 12.0,
+              onChanged: (newFontSize) {
+                setState(() {
+                  increaseSizeFont = newFontSize;
+                },);
+              },
+            ),
           ),
         ],
       ),
@@ -633,7 +655,8 @@ class sharePage extends StatelessWidget {
           height: 50,
           child: ElevatedButton(
             onPressed: () {
-              const url = 'https://play.google.com/store/apps/details?id=com.example.ten_programming_languages';
+              const url =
+                  'https://play.google.com/store/apps/details?id=com.example.ten_programming_languages';
               Share.share(url);
             },
             child: Text(
