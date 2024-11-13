@@ -633,8 +633,8 @@ class sharePage extends StatelessWidget {
           height: 50,
           child: ElevatedButton(
             onPressed: () {
-              String share = 'https://www.google.com';
-              Share.share(share);
+              const url = 'https://play.google.com/store/apps/details?id=com.example.ten_programming_languages';
+              Share.share(url);
             },
             child: Text(
               'اشتراک گذاری لینک',
