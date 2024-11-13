@@ -509,7 +509,7 @@ class _settingPageState extends State<settingPage> {
             title: Text(
               'خروج',
               style: TextStyle(
-                  color: Colors.red, fontFamily: 'iranYekan', fontSize: increaseSizeFont),
+                  color: Colors.black, fontFamily: 'iranYekan', fontSize: increaseSizeFont),
             ),
             onTap: () {
               Navigator.of(context).pop();
@@ -720,7 +720,6 @@ void changeProfilePicture(BuildContext context) {
         actions: [
           TextButton(
             onPressed: () {
-              // کد مربوط به انتخاب تصویر از گالری یا دوربین
               Navigator.pop(context);
             },
             child: Text('انتخاب تصویر'),
@@ -759,5 +758,5 @@ void logout(BuildContext context) {
                 child: Text('انصراف')),
           ],
         );
-      });
+      },);
 }
