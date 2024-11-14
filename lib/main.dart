@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: Locale('fa', 'Afg'),
       debugShowCheckedModeBanner: false,
       title: 'زبان های برنامه نویسی',
       theme: ThemeData(
@@ -262,7 +263,7 @@ class homePage extends StatelessWidget {
             },
             child: Card(
               color: Colors.white,
-              elevation: 6,
+              elevation: 7,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
@@ -315,6 +316,7 @@ class homePage extends StatelessWidget {
 }
 
 class detailsPage extends StatelessWidget {
+
   String name;
   String description;
   String image;
