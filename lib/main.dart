@@ -215,15 +215,25 @@ class homePage extends StatelessWidget {
             },
             itemBuilder: (context) => [
               PopupMenuItem(
-                child: Text('تنظیمات'),
+                child: ListTile(
+                  leading: Icon(CupertinoIcons.settings),
+                  title: Text('تنظیمات '),
+                ),
                 value: 'setting',
+
               ),
               PopupMenuItem(
-                child: Text('درباره ما'),
+                child: ListTile(
+                  leading: Icon(CupertinoIcons.info),
+                  title: Text('درباره ما'),
+                ),
                 value: 'about',
               ),
               PopupMenuItem(
-                child: Text('اشتراک گذاری'),
+                child: ListTile(
+                  leading: Icon(CupertinoIcons.share),
+                  title: Text('اشتراک گذاری'),
+                ),
                 value: 'share',
               ),
             ],
